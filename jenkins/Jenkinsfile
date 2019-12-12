@@ -29,7 +29,7 @@ pipeline {
 	stage (‘Deploy’) {
 
 	    steps {
-	        sh ‘ssh -i "/root/.ssh/test2222.pem" ubuntu@ec2-52-70-198-12.compute-1.amazonaws.com mkdir -p /var/www/temp_deploy’
+	        sh ‘ssh ubuntu@ec2-52-70-198-12.compute-1.amazonaws.com mkdir -p /var/www/temp_deploy’
 
                 sh ‘scp -r dist ubuntu@ec2-52-70-198-12.compute-1.amazonaws.com:/var/www/temp_deploy/dist/’
 
